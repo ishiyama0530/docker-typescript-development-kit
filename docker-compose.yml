@@ -1,0 +1,10 @@
+services:
+  api:
+    image: node:20
+    working_dir: /app
+    volumes:
+      - ./api:/app
+      - /app/node_modules # コンテナ内node_modulesをホストのファイルシステムから分離
+    ports:
+      - "3000:3000"
+    command: /bin/sh -c "npm i && npm run dev"
