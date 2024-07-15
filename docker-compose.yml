@@ -7,4 +7,5 @@ services:
       - /app/node_modules # コンテナ内node_modulesをホストのファイルシステムから分離
     ports:
       - "3000:3000"
+      - "9229:9229"  # デバッグポート
     command: /bin/sh -c "npm i && npm run dev"
